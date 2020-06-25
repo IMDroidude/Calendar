@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/event_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/event_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.simplemobiletools.commons.views.MyEditText
+            android:id="@+id/event_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_margin"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:hint="@string/title"
+            android:inputType="textCapSentences"
+            android:maxLength="180"
+            android:maxLines="1"
+            android:minEms="20"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/day_text_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.simplemobiletools.commons.views.MyEditText
+                android:id="@+id/event_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_margin"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:layout_weight="1"
+                android:hint="@string/location"
+                android:inputType="textCapWords"
+                android:maxLength="180"
+                android:maxLines="1"
+                android:minEms="20"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/day_text_size" />
+
+            <ImageView
+                android:id="@+id/event_show_on_map"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/activity_margin"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:paddingStart="@dimen/small_margin"
+                android:paddingEnd="@dimen/small_margin"
+                android:src="@drawable/ic_place_vector" />
+        </LinearLayout>
+
+        <com.simplemobiletools.commons.views.MyEditText
+            android:id="@+id/event_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_margin"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:autoLink="all"
+            android:gravity="top"
+            android:hint="@string/description"
+            android:inputType="textCapSentences|textMultiLine"
+            android:linksClickable="true"
+            android:minEms="20"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/day_text_size" />
+
+        <ImageView
+            android:id="@+id/event_description_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginBottom="@dimen/normal_margin"
+            android:background="@color/divider_grey"
+            android:importantForAccessibility="no" />
+
+
+
+        <ImageView
+            android:id="@+id/email_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:background="@color/divider_grey"
+            android:importantForAccessibility="no" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/event_time_image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:padding="@dimen/medium_margin"
+                android:src="@drawable/ic_clock_vector" />
+
+            <com.simplemobiletools.commons.views.MySwitchCompat
+                android:id="@+id/event_all_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/normal_margin"
+                android:paddingTop="@dimen/normal_margin"
+                android:paddingBottom="@dimen/normal_margin"
+                android:text="@string/all_day"
+                android:textSize="@dimen/day_text_size"
+                app:switchPadding="@dimen/small_margin" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dummy text"
+            android:textColor="@android:color/white"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_margin"
+            android:layout_marginRight="@dimen/activity_margin"
+            android:orientation="horizontal">
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_start_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/bigger_margin"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:paddingStart="@dimen/activity_margin"
+                android:paddingTop="@dimen/activity_margin"
+                android:paddingEnd="@dimen/activity_margin"
+                android:paddingBottom="@dimen/activity_margin"
+                android:textSize="@dimen/day_text_size"
+                tools:text="January 1 1970" />
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_start_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/activity_margin"
+                android:textSize="@dimen/day_text_size"
+                tools:text="00:00" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_margin"
+            android:layout_marginRight="@dimen/activity_margin"
+            android:orientation="horizontal">
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_end_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/bigger_margin"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:paddingStart="@dimen/activity_margin"
+                android:paddingTop="@dimen/activity_margin"
+                android:paddingEnd="@dimen/activity_margin"
+                android:paddingBottom="@dimen/activity_margin"
+                android:textSize="@dimen/day_text_size"
+                tools:text="January 1 1970" />
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_end_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/activity_margin"
+                android:textSize="@dimen/day_text_size"
+                tools:text="00:00" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/normal_margin"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/calendar_image"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:src="@drawable/ic_calendar_vector" />
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/medium_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.simplemobiletools.commons.views.MyTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/bigger_margin"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingStart="@dimen/activity_margin"
+                    android:paddingTop="@dimen/activity_margin"
+                    android:paddingEnd="@dimen/activity_margin"
+                    android:paddingBottom="@dimen/activity_margin"
+                    android:textSize="@dimen/day_text_size"
+                    tools:text="Events" />
+
+                <com.simplemobiletools.commons.views.MyTextView
+                    android:id="@+id/user_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_margin"
+                    android:background="?attr/selectableItemBackground"
+                    android:textSize="@dimen/day_text_size"
+                    android:textColor="@color/color_primary"
+                    tools:text="zareahmer@yahoo.com" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/time_zone_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginBottom="@dimen/normal_margin"
+            android:background="@color/divider_grey"
+            android:importantForAccessibility="no" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/event_time_zone_image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:padding="@dimen/medium_margin"
+                android:src="@drawable/ic_globe_vector" />
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_time_zone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:background="?attr/selectableItemBackground"
+                android:ellipsize="end"
+                android:lines="1"
+                android:paddingTop="@dimen/activity_margin"
+                android:paddingBottom="@dimen/activity_margin"
+                android:textSize="@dimen/day_text_size"
+                tools:text="Europe/Bratislava" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/event_repetition_image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:padding="@dimen/medium_margin"
+                android:src="@drawable/ic_repeat_vector" />
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_repetition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:background="?attr/selectableItemBackground"
+                android:paddingTop="@dimen/normal_margin"
+                android:paddingBottom="@dimen/normal_margin"
+                android:textSize="@dimen/day_text_size"
+                tools:text="@string/no_repetition" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/event_date_time_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:background="@color/divider_grey"
+            android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/event_reminder_image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:padding="@dimen/medium_margin"
+            android:src="@drawable/ic_bell_vector" />
+
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/event_reminder_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:background="?attr/selectableItemBackground"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingTop="@dimen/activity_margin"
+            android:paddingBottom="@dimen/activity_margin"
+            android:textSize="@dimen/day_text_size"
+            tools:text="@string/add_another_reminder" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/event_reminder_1_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/activity_margin"
+            android:visibility="gone"
+            android:src="@drawable/ic_bell_vector" />
+
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/event_reminder_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.4"
+            android:background="?attr/selectableItemBackground"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingTop="@dimen/activity_margin"
+            android:paddingBottom="@dimen/activity_margin"
+            android:text="@string/add_another_reminder"
+            android:textSize="@dimen/day_text_size"
+            android:visibility="gone"
+            tools:text="@string/add_another_reminder" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/event_reminder_2_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/small_margin"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/activity_margin"
+            android:src="@drawable/ic_bell_vector" />
+
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/event_reminder_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.4"
+            android:background="?attr/selectableItemBackground"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingTop="@dimen/activity_margin"
+            android:paddingBottom="@dimen/activity_margin"
+            android:text="@string/add_another_reminder"
+            android:textSize="@dimen/day_text_size"
+            android:visibility="gone"
+            tools:text="@string/add_another_reminder" />
+    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/event_reminder_3_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/small_margin"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/activity_margin"
+            android:src="@drawable/ic_bell_vector" />
+
+        <ImageView
+            android:id="@+id/event_reminder_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:background="@color/divider_grey"
+            android:importantForAccessibility="no" />
+
+        <RelativeLayout
+            android:id="@+id/event_repetition_rule_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:visibility="gone">
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_repetition_rule_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:paddingTop="@dimen/activity_margin"
+                android:paddingBottom="@dimen/activity_margin"
+                android:text="@string/repeat_on"
+                android:textSize="@dimen/day_text_size" />
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_repetition_rule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/event_repetition_rule_label"
+                android:clickable="false"
+                android:gravity="end"
+                android:padding="@dimen/activity_margin"
+                android:text="@string/every_day"
+                android:textSize="@dimen/day_text_size" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/event_repetition_limit_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:visibility="gone">
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_repetition_limit_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/event_repetition_limit"
+                android:clickable="false"
+                android:paddingTop="@dimen/activity_margin"
+                android:paddingBottom="@dimen/activity_margin"
+                android:text="@string/repeat_till"
+                android:textSize="@dimen/day_text_size" />
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_repetition_limit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:clickable="false"
+                android:padding="@dimen/activity_margin"
+                android:text="@string/forever"
+                android:textSize="@dimen/day_text_size" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/event_repetition_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:background="@color/divider_grey"
+            android:importantForAccessibility="no" />
+
+        <ImageView
+            android:id="@+id/event_attendees_image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:padding="@dimen/medium_margin"
+            android:src="@drawable/ic_people_vector" />
+
+        <LinearLayout
+            android:id="@+id/event_attendees_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:orientation="vertical" />
+
+        <ImageView
+            android:id="@+id/event_attendees_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:background="@color/divider_grey"
+            android:importantForAccessibility="no" />
+
+        <ImageView
+            android:id="@+id/event_caldav_calendar_image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:padding="@dimen/medium_margin"
+            android:src="@drawable/ic_calendar_vector"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/event_caldav_calendar_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:visibility="gone">
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_caldav_calendar_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_toStartOf="@+id/event_caldav_calendar_color"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingTop="@dimen/medium_margin"
+                android:paddingEnd="@dimen/medium_margin"
+                android:paddingBottom="@dimen/tiny_margin"
+                android:textSize="@dimen/day_text_size"
+                tools:text="My calendar" />
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_caldav_calendar_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/event_caldav_calendar_name"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_toStartOf="@+id/event_caldav_calendar_color"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingEnd="@dimen/medium_margin"
+                android:paddingBottom="@dimen/medium_margin"
+                android:textSize="@dimen/meta_text_size"
+                tools:text="hello@simplemobiletools.com" />
+
+            <ImageView
+                android:id="@+id/event_caldav_calendar_color"
+                android:layout_width="@dimen/color_sample_size"
+                android:layout_height="@dimen/color_sample_size"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_margin"
+                android:clickable="false" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/event_caldav_calendar_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider_grey"
+            android:importantForAccessibility="no"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/event_type_image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:padding="@dimen/medium_margin"
+            android:src="@drawable/ic_color_vector"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/event_type_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:background="?attr/selectableItemBackground"
+            android:visibility="gone">
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/event_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:layout_toStartOf="@+id/event_type_color"
+                android:paddingTop="@dimen/normal_margin"
+                android:paddingBottom="@dimen/normal_margin"
+                android:textSize="@dimen/day_text_size" />
+
+            <ImageView
+                android:id="@+id/event_type_color"
+                android:layout_width="@dimen/color_sample_size"
+                android:layout_height="@dimen/color_sample_size"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_margin"
+                android:clickable="false" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/event_type_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider_grey"
+            android:importantForAccessibility="no" />
+    </LinearLayout>
+</ScrollView>
