@@ -3,7 +3,7 @@ package calendar.tools.droid.dialogs
 import android.app.Activity
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.helpers.DELETE_ALL_OCCURRENCES
 import calendar.tools.droid.helpers.DELETE_FUTURE_OCCURRENCES
 import calendar.tools.droid.helpers.DELETE_SELECTED_OCCURRENCE

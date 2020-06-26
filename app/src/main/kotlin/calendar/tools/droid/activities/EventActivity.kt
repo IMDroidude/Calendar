@@ -28,7 +28,7 @@ import androidx.core.app.NotificationManagerCompat
 import calendar.tools.droid.adapters.AutoCompleteTextViewAdapter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.dialogs.*
 import calendar.tools.droid.extensions.*
 import calendar.tools.droid.helpers.*

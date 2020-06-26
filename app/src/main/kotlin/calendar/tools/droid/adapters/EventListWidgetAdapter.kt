@@ -5,9 +5,9 @@ import android.content.Intent
 import android.view.View
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
-import com.simplemobiletools.calendar.pro.R
-import com.simplemobiletools.calendar.pro.R.id.event_item_holder
-import com.simplemobiletools.calendar.pro.R.id.event_section_title
+import calendar.tools.droid.R
+import calendar.tools.droid.R.id.event_item_holder
+import calendar.tools.droid.R.id.event_section_title
 import calendar.tools.droid.extensions.config
 import calendar.tools.droid.extensions.eventsHelper
 import calendar.tools.droid.extensions.getWidgetFontSize

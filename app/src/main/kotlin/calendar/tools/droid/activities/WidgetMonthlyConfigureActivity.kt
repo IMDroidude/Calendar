@@ -9,7 +9,7 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.SeekBar
 import android.widget.TextView
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.extensions.addDayEvents
 import calendar.tools.droid.extensions.addDayNumber
 import calendar.tools.droid.extensions.config

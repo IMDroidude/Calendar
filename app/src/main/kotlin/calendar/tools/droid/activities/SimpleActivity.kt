@@ -4,7 +4,7 @@ import android.content.Context
 import android.database.ContentObserver
 import android.os.Handler
 import android.provider.CalendarContract
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.extensions.config
 import calendar.tools.droid.extensions.refreshCalDAVCalendars
 import com.simplemobiletools.commons.activities.BaseSimpleActivity

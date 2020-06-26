@@ -18,10 +18,10 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.MenuItemCompat
+import calendar.tools.droid.BuildConfig
 import calendar.tools.droid.adapters.EventListAdapter
 import calendar.tools.droid.databases.EventsDatabase
-import com.simplemobiletools.calendar.pro.BuildConfig
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.dialogs.ExportEventsDialog
 import calendar.tools.droid.dialogs.FilterEventTypesDialog
 import calendar.tools.droid.dialogs.ImportEventsDialog
@@ -111,10 +111,10 @@ class TestWeekCalendar  : SimpleActivity(), RefreshRecyclerViewListener {
             checkCalDAVUpdateListener()
         }
 
-        if (!config.wasUpgradedFromFreeShown && isPackageInstalled("com.simplemobiletools.calendar")) {
+        /*if (!config.wasUpgradedFromFreeShown && isPackageInstalled("com.simplemobiletools.calendar")) {
             ConfirmationDialog(this, "", R.string.upgraded_from_free, R.string.ok, 0) {}
             config.wasUpgradedFromFreeShown = true
-        }
+        }*/
     }
 
     override fun onResume() {

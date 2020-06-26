@@ -8,7 +8,7 @@ import android.provider.CalendarContract.*
 import android.util.SparseIntArray
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.extensions.*
 import calendar.tools.droid.models.*
 import calendar.tools.droid.objects.States.isUpdatingCalDAV

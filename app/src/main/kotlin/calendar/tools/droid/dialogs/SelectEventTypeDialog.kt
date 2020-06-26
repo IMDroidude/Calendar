@@ -5,7 +5,7 @@ import android.graphics.Color
 import android.view.ViewGroup
 import android.widget.RadioGroup
 import androidx.appcompat.app.AlertDialog
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.extensions.config
 import calendar.tools.droid.extensions.eventsHelper
 import calendar.tools.droid.models.EventType

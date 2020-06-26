@@ -1,6 +1,6 @@
 package calendar.tools.droid.helpers
 
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.extensions.calDAVHelper
 import calendar.tools.droid.extensions.eventTypesDB
 import calendar.tools.droid.helpers.IcsExporter.ExportResult.*

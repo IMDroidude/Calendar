@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Filter
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.activities.SimpleActivity
 import calendar.tools.droid.models.Attendee
 import com.simplemobiletools.commons.extensions.normalizeString

@@ -6,7 +6,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.SeekBar
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.extensions.config
 import calendar.tools.droid.helpers.Formatter
 import calendar.tools.droid.helpers.LOW_ALPHA

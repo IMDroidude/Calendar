@@ -9,7 +9,7 @@ import android.text.TextUtils
 import android.util.AttributeSet
 import android.util.SparseIntArray
 import android.view.View
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.extensions.config
 import calendar.tools.droid.extensions.seconds
 import calendar.tools.droid.helpers.Formatter

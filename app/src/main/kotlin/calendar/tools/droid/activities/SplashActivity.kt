@@ -15,8 +15,6 @@ class SplashActivity : BaseSplashActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        ///baseConfig = this@SplashActivity.config
-
         baseConfig.textColor = Color.DKGRAY
         baseConfig.backgroundColor = Color.WHITE
         baseConfig.primaryColor = Color.parseColor("#4169E1")

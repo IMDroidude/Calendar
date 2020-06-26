@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import calendar.tools.droid.adapters.ManageEventTypesAdapter
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.dialogs.EditEventTypeDialog
 import calendar.tools.droid.extensions.eventsHelper
 import calendar.tools.droid.interfaces.DeleteEventTypesListener

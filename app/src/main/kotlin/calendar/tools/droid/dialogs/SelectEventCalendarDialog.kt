@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AlertDialog
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.extensions.config
 import calendar.tools.droid.extensions.eventsHelper
 import calendar.tools.droid.helpers.STORED_LOCALLY_ONLY

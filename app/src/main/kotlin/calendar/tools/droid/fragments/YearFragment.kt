@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.activities.MainActivity
 import calendar.tools.droid.extensions.config
 import calendar.tools.droid.helpers.YEAR_LABEL

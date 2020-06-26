@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.activities.EventActivity
 import calendar.tools.droid.activities.MainActivity
 import calendar.tools.droid.activities.SimpleActivity

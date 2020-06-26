@@ -9,7 +9,7 @@ import android.content.Intent
 import android.content.res.Resources
 import android.view.View
 import android.widget.RemoteViews
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.activities.SplashActivity
 import calendar.tools.droid.extensions.config
 import calendar.tools.droid.extensions.getWidgetFontSize

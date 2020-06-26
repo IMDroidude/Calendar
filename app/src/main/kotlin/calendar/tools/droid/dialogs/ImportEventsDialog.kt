@@ -2,7 +2,7 @@ package calendar.tools.droid.dialogs
 
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.activities.SimpleActivity
 import calendar.tools.droid.extensions.config
 import calendar.tools.droid.extensions.eventTypesDB

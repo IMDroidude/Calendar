@@ -15,7 +15,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.simplemobiletools.calendar.pro"
+        applicationId "calendar.tools.droid"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 179

@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.DatePicker
 import androidx.appcompat.app.AlertDialog
 import androidx.viewpager.widget.ViewPager
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.activities.MainActivity
 import calendar.tools.droid.adapters.MyYearPagerAdapter
 import calendar.tools.droid.extensions.config

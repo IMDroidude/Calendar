@@ -1,7 +1,7 @@
 package calendar.tools.droid.helpers
 
 import android.content.Context
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.extensions.config
 import calendar.tools.droid.extensions.seconds
 import org.joda.time.DateTime

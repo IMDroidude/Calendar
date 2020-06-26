@@ -7,7 +7,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.widget.SeekBar
 import calendar.tools.droid.adapters.EventListAdapter
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.extensions.config
 import calendar.tools.droid.extensions.seconds
 import calendar.tools.droid.helpers.Formatter

@@ -7,7 +7,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.activities.SplashActivity
 import calendar.tools.droid.extensions.config
 import com.simplemobiletools.commons.extensions.applyColorFilter

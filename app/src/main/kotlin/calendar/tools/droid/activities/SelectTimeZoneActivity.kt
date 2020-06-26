@@ -9,7 +9,7 @@ import android.view.MenuItem
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.MenuItemCompat
 import calendar.tools.droid.adapters.SelectTimeZoneAdapter
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.helpers.CURRENT_TIME_ZONE
 import calendar.tools.droid.helpers.TIME_ZONE
 import calendar.tools.droid.helpers.getAllTimeZones

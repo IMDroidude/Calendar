@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SwitchCompat
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.activities.SimpleActivity
 import calendar.tools.droid.extensions.calDAVHelper
 import calendar.tools.droid.extensions.config

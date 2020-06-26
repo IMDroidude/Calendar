@@ -3,7 +3,7 @@ package calendar.tools.droid.adapters
 import android.content.Context
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 
 class EventListWidgetAdapterEmpty(val context: Context) : RemoteViewsService.RemoteViewsFactory {
     override fun getViewAt(position: Int) = RemoteViews(context.packageName, R.layout.event_list_section_widget)

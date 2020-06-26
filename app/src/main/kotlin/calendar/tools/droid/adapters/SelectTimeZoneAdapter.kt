@@ -3,7 +3,7 @@ package calendar.tools.droid.adapters
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.activities.SimpleActivity
 import calendar.tools.droid.extensions.config
 import calendar.tools.droid.models.MyTimeZone

@@ -1,8 +1,8 @@
 package calendar.tools.droid.extensions
 
 import android.app.Activity
-import com.simplemobiletools.calendar.pro.BuildConfig
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.BuildConfig
+import calendar.tools.droid.R
 import calendar.tools.droid.dialogs.CustomEventRepeatIntervalDialog
 import calendar.tools.droid.helpers.*
 import calendar.tools.droid.models.Event

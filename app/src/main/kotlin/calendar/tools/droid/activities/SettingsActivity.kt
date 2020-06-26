@@ -6,7 +6,7 @@ import android.content.Intent
 import android.media.AudioManager
 import android.os.Bundle
 import android.view.Menu
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.dialogs.SelectCalendarsDialog
 import calendar.tools.droid.dialogs.SelectEventTypeDialog
 import calendar.tools.droid.extensions.*

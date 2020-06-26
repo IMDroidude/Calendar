@@ -3,7 +3,7 @@ package calendar.tools.droid.dialogs
 import android.app.Activity
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.helpers.DAY
 import calendar.tools.droid.helpers.MONTH
 import calendar.tools.droid.helpers.WEEK

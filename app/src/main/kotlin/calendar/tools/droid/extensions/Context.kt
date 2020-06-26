@@ -20,7 +20,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.app.AlarmManagerCompat
 import androidx.core.app.NotificationCompat
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.activities.EventActivity
 import calendar.tools.droid.activities.SnoozeReminderActivity
 import calendar.tools.droid.databases.EventsDatabase

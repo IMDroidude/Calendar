@@ -12,7 +12,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.collection.LongSparseArray
 import androidx.fragment.app.Fragment
-import com.simplemobiletools.calendar.pro.R
+import calendar.tools.droid.R
 import calendar.tools.droid.activities.EventActivity
 import calendar.tools.droid.extensions.*
 import calendar.tools.droid.helpers.*
