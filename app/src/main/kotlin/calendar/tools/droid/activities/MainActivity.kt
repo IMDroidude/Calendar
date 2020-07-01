@@ -190,13 +190,6 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
             R.id.go_to_date -> showGoToDateDialog()
             R.id.filter -> showFilterDialog()
             R.id.refresh_caldav_calendars -> refreshCalDAVCalendars(true)
-            R.id.add_holidays -> addHolidays()
-            R.id.add_birthdays -> tryAddBirthdays()
-            R.id.add_anniversaries -> tryAddAnniversaries()
-            R.id.import_events -> tryImportEvents()
-            R.id.export_events -> tryExportEvents()
-            R.id.settings -> launchSettings()
-            R.id.about -> launchAbout()
             android.R.id.home -> onBackPressed()
             else -> return super.onOptionsItemSelected(item)
         }
@@ -829,7 +822,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     }
 
     private fun launchSettings() {
-        startActivity(Intent(applicationContext, SettingsActivity::class.java))
+        ///startActivity(Intent(applicationContext, SettingsActivity::class.java))
     }
 
     private fun launchAbout() {

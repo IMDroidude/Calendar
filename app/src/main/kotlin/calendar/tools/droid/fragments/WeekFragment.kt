@@ -268,6 +268,7 @@ class WeekFragment : Fragment(), WeeklyCalendar {
                     y = hour * rowHeight
                     applyColorFilter(primaryColor.getContrastColor())
 
+                    //working on click of plus icon in Week View
                     setOnClickListener {
                         val timestamp = weekTimestamp + index * DAY_SECONDS + hour * 60 * 60
                         Intent(context, EventActivity::class.java).apply {
