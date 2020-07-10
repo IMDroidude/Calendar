@@ -134,7 +134,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
         }
 
         storeStateVariables()
-        updateWidgets()
+        ///updateWidgets()
         updateTextColors(calendar_coordinator)
 
         search_holder.background = ColorDrawable(config.backgroundColor)
@@ -422,7 +422,7 @@ class MainActivity : SimpleActivity(), RefreshRecyclerViewListener {
     private fun showFilterDialog() {
         FilterEventTypesDialog(this) {
             refreshViewPager()
-            updateWidgets()
+            ///updateWidgets()
         }
     }
 

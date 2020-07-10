@@ -3,6 +3,7 @@ package calendar.tools.droid.fragments
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -85,6 +86,10 @@ class EventListFragment : MyFragmentHolder(), RefreshRecyclerViewListener {
             maxFetchedTS = DateTime().plusMonths(6).seconds()
         }
 
+        val min = Formatter.getDateTimeFromTS(minFetchedTS)
+        val max = Formatter.getDateTimeFromTS(maxFetchedTS)
+
+        Log.v("EventListFragment", "min = $min && max = $max")
         context!!.eventsHelper.getEvents(minFetchedTS, maxFetchedTS) {
             if (it.size >= MIN_EVENTS_TRESHOLD) {
                 receivedEvents(it, NOT_UPDATING)

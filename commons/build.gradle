@@ -50,13 +50,13 @@ android {
 
 dependencies {
 
-    implementation 'com.andrognito.patternlockview:patternlockview:1.0.0'
+    implementation 'com.andrognito.patternlockview:patternlockview:1.0.0' //delete this if you don't require FileDialog
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta7'
 
     api 'androidx.appcompat:appcompat:1.0.2'
-    api 'com.github.ajalt.reprint:core:3.3.0@aar'
+    api 'com.github.ajalt.reprint:core:3.3.0@aar' //delete this if you don't require FileDialog
     api 'com.google.android.material:material:1.0.0'
     api 'com.google.code.gson:gson:2.8.5'
     api 'com.duolingo.open:rtl-viewpager:1.0.3'

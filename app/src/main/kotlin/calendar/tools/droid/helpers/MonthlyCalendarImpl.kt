@@ -35,11 +35,11 @@ class MonthlyCalendarImpl(val callback: MonthlyCalendar, val context: Context) {
 
     fun getDays(markDaysWithEvents: Boolean) {
         val days = ArrayList<DayMonthly>(DAYS_CNT)
-        val currMonthDays = mTargetDate.dayOfMonth().maximumValue
-        var firstDayIndex = mTargetDate.withDayOfMonth(1).dayOfWeek
+        val currMonthDays = mTargetDate.dayOfMonth().maximumValue // days in current Month
+        var firstDayIndex = mTargetDate.withDayOfMonth(1).dayOfWeek //week me day ki position
         if (!context.config.isSundayFirst)
             firstDayIndex -= 1
-        val prevMonthDays = mTargetDate.minusMonths(1).dayOfMonth().maximumValue
+        val prevMonthDays = mTargetDate.minusMonths(1).dayOfMonth().maximumValue//last month day count
 
         var isThisMonth = false
         var isToday: Boolean
@@ -66,9 +66,14 @@ class MonthlyCalendarImpl(val callback: MonthlyCalendar, val context: Context) {
 
             isToday = isToday(curDay, value)
 
-            val newDay = curDay.withDayOfMonth(value)
+            val newDay = curDay.withDayOfMonth(value) // Month ka din yani 2020 -06-29
             val dayCode = Formatter.getDayCodeFromDateTime(newDay)
-            val day = DayMonthly(value, isThisMonth, isToday, dayCode, newDay.weekOfWeekyear, ArrayList(), i)
+            //val customModel = getDayInfoFromLocalDatabase(dayCode) -> that comes from server on app start.
+            // check here isDayDisable,dayBgColor, eventBgColor of that date
+            val disalbe = i%2 == 0
+
+
+            val day = DayMonthly(value, isThisMonth, isToday, dayCode, newDay.weekOfWeekyear, ArrayList(), i,disalbe)
             days.add(day)
             value++
         }

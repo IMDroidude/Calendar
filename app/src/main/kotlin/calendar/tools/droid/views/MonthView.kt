@@ -2,11 +2,13 @@ package calendar.tools.droid.views
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.text.TextPaint
 import android.text.TextUtils
 import android.util.AttributeSet
+import android.util.Log
 import android.util.SparseIntArray
 import android.view.View
 import calendar.tools.droid.R
@@ -120,6 +122,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        ///background = resources.getDrawable(R.drawable.circle_background)
         dayVerticalOffsets.clear()
         measureDaySize(canvas)
 
@@ -127,7 +130,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
             drawGrid(canvas)
         }
 
-        addWeekDayLetters(canvas)
+        addWeekDayLetters(canvas) // for showing weekday above Month view -> M T W T F S S
         if (showWeekNumbers && days.isNotEmpty()) {
             addWeekNumbers(canvas)
         }
@@ -137,25 +140,43 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
             for (x in 0..6) {
                 val day = days.getOrNull(curId)
                 if (day != null) {
+
                     dayVerticalOffsets.put(day.indexOnMonthView, dayVerticalOffsets[day.indexOnMonthView] + weekDaysLetterHeight)
                     val verticalOffset = dayVerticalOffsets[day.indexOnMonthView]
                     val xPos = x * dayWidth + horizontalOffset
                     val yPos = y * dayHeight + verticalOffset
                     val xPosCenter = xPos + dayWidth / 2
+                    val yPosCenter = yPos + dayHeight / 2
+
+
                     if (day.isToday) {
                         canvas.drawCircle(xPosCenter, yPos + paint.textSize * 0.7f, paint.textSize * 0.75f, getCirclePaint(day))
                     }
 
+                    //day item background set here
+                    if(x%2 ==0)
+                        canvas.drawRect(xPos,yPos,xPos + dayWidth,yPos + dayHeight,getBackgroundPaint(day.dayBgColor))
+                    else
+                        canvas.drawRect(xPos,yPos,xPos + dayWidth,yPos + dayHeight,getCirclePaint(day))
+
+                    //subtract 15.0f to adjust it to center - > where did this 15.0f comes from
+                    //val subtractVal = yPosCenter - (paint.descent() + paint.ascent())// / 2
+                    //total events today count draws here
+                    canvas.drawCircle(xPosCenter,yPosCenter - 15.0f,paint.textSize * 0.85f , getCirclePaint(day))
+                    canvas.drawText("${day.dayEvents.size}",xPosCenter,yPosCenter,getTextPaint(day))
+
+
                     canvas.drawText(day.value.toString(), xPosCenter, yPos + paint.textSize, getTextPaint(day))
                     dayVerticalOffsets.put(day.indexOnMonthView, (verticalOffset + paint.textSize * 2).toInt())
+
                 }
                 curId++
             }
         }
 
-        for (event in allEvents) {
+        /*for (event in allEvents) {
             drawEvent(event, canvas)
-        }
+        }*/
     }
 
     private fun drawGrid(canvas: Canvas) {
@@ -173,6 +194,8 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
         for (i in 0..5) {
             canvas.drawLine(0f, i * dayHeight + weekDaysLetterHeight, canvas.width.toFloat(), i * dayHeight + weekDaysLetterHeight, gridPaint)
         }
+
+        ///canvas.drawRect()
     }
 
     private fun addWeekDayLetters(canvas: Canvas) {
@@ -209,7 +232,9 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
         maxEventsPerDay = availableHeightForEvents / eventTitleHeight
     }
 
-    private fun drawEvent(event: MonthViewEvent, canvas: Canvas) {
+    /*private fun drawEvent(event: MonthViewEvent, canvas: Canvas) {
+
+        //Log.v("" , event.startDayIndex)
         var verticalOffset = 0
         for (i in 0 until Math.min(event.daysCnt, 7 - event.startDayIndex % 7)) {
             verticalOffset = Math.max(verticalOffset, dayVerticalOffsets[event.startDayIndex + i])
@@ -253,7 +278,7 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
     private fun drawEventTitle(event: MonthViewEvent, canvas: Canvas, x: Float, y: Float, availableWidth: Float, startDay: DayMonthly, endDay: DayMonthly) {
         val ellipsized = TextUtils.ellipsize(event.title, eventTitlePaint, availableWidth - smallPadding, TextUtils.TruncateAt.END)
         canvas.drawText(event.title, 0, ellipsized.length, x + smallPadding * 2, y, getEventTitlePaint(event, startDay, endDay))
-    }
+    }*/
 
     private fun getTextPaint(startDay: DayMonthly): Paint {
         var paintColor = textColor
@@ -297,6 +322,26 @@ class MonthView(context: Context, attrs: AttributeSet, defStyle: Int) : View(con
     private fun getCirclePaint(day: DayMonthly): Paint {
         val curPaint = Paint(paint)
         var paintColor = primaryColor
+        if (!day.isThisMonth) {
+            paintColor = paintColor.adjustAlpha(MEDIUM_ALPHA)
+        }
+        curPaint.color = paintColor
+        return curPaint
+    }
+
+    private fun getBackgroundPaint(color:Int): Paint {
+        val curPaint = Paint(paint)
+        var paintColor = color
+        /*if (!day.isThisMonth) {
+            paintColor = paintColor.adjustAlpha(MEDIUM_ALPHA)
+        }*/
+        curPaint.color = paintColor
+        return curPaint
+    }
+
+    private fun getCounterColor(day: DayMonthly): Paint {
+        val curPaint = Paint(paint)
+        var paintColor = Color.RED
         if (!day.isThisMonth) {
             paintColor = paintColor.adjustAlpha(MEDIUM_ALPHA)
         }

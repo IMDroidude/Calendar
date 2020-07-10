@@ -92,7 +92,7 @@ class EventsHelper(val context: Context) {
 
         event.id = eventsDB.insertOrUpdate(event)
 
-        context.updateWidgets()
+        ///context.updateWidgets()
         context.scheduleNextEventReminder(event, showToasts)
 
         if (addToCalDAV && event.source != SOURCE_SIMPLE_CALENDAR && config.caldavSync) {
@@ -117,14 +117,14 @@ class EventsHelper(val context: Context) {
                 }
             }
         } finally {
-            context.updateWidgets()
+            ///context.updateWidgets()
         }
     }
 
     fun updateEvent(event: Event, updateAtCalDAV: Boolean, showToasts: Boolean, callback: (() -> Unit)? = null) {
         eventsDB.insertOrUpdate(event)
 
-        context.updateWidgets()
+        ///context.updateWidgets()
         context.scheduleNextEventReminder(event, showToasts)
         if (updateAtCalDAV && event.source != SOURCE_SIMPLE_CALENDAR && config.caldavSync) {
             context.calDAVHelper.updateCalDAVEvent(event)
@@ -161,7 +161,7 @@ class EventsHelper(val context: Context) {
             }
 
             deleteChildEvents(it, deleteFromCalDAV)
-            context.updateWidgets()
+            ///context.updateWidgets()
         }
     }
 

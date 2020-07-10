@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import calendar.tools.droid.R
 import calendar.tools.droid.activities.MainActivity
@@ -138,8 +139,10 @@ class MonthFragment : Fragment(), MonthlyCalendar {
     }
 
     private fun updateDays(days: ArrayList<DayMonthly>) {
-        mHolder.month_view_wrapper.updateDays(days) {
-            (activity as MainActivity).openDayFromMonthly(Formatter.getDateTimeFromCode(it.code))
+        mHolder.month_view_wrapper.updateDays(days) {/// on monthView
+            if(!it.isDayDisable)
+                (activity as MainActivity).openDayFromMonthly(Formatter.getDateTimeFromCode(it.code))
+            else Toast.makeText(context,"This day is disable",Toast.LENGTH_LONG).show()
         }
     }
 }

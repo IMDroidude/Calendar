@@ -7,7 +7,6 @@ import android.os.PowerManager
 import calendar.tools.droid.extensions.eventsDB
 import calendar.tools.droid.extensions.notifyEvent
 import calendar.tools.droid.extensions.scheduleNextEventReminder
-import calendar.tools.droid.extensions.updateListWidget
 import calendar.tools.droid.helpers.EVENT_ID
 import calendar.tools.droid.helpers.Formatter
 import calendar.tools.droid.helpers.REMINDER_NOTIFICATION
@@ -30,7 +29,7 @@ class NotificationReceiver : BroadcastReceiver() {
             return
         }
 
-        context.updateListWidget()
+        ///context.updateListWidget()
         val event = context.eventsDB.getEventWithId(id)
         if (event == null || event.getReminders().none { it.type == REMINDER_NOTIFICATION } || event.repetitionExceptions.contains(Formatter.getTodayCode())) {
             return

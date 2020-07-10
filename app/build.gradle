@@ -78,6 +78,8 @@ dependencies {
 
     implementation project(':commons')
 
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     kapt 'androidx.room:room-compiler:2.2.5'
     implementation 'androidx.room:room-runtime:2.2.5'
     annotationProcessor 'androidx.room:room-compiler:2.2.5'

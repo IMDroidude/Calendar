@@ -45,42 +45,6 @@ val Context.eventTypesDB: EventTypesDao get() = EventsDatabase.getInstance(appli
 val Context.eventsHelper: EventsHelper get() = EventsHelper(this)
 val Context.calDAVHelper: CalDAVHelper get() = CalDAVHelper(this)
 
-fun Context.updateWidgets() {
-    val widgetIDs = AppWidgetManager.getInstance(applicationContext).getAppWidgetIds(ComponentName(applicationContext, MyWidgetMonthlyProvider::class.java))
-    if (widgetIDs.isNotEmpty()) {
-        Intent(applicationContext, MyWidgetMonthlyProvider::class.java).apply {
-            action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
-            putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIDs)
-            sendBroadcast(this)
-        }
-    }
-
-    updateListWidget()
-    updateDateWidget()
-}
-
-fun Context.updateListWidget() {
-    val widgetIDs = AppWidgetManager.getInstance(applicationContext).getAppWidgetIds(ComponentName(applicationContext, MyWidgetListProvider::class.java))
-    if (widgetIDs.isNotEmpty()) {
-        Intent(applicationContext, MyWidgetListProvider::class.java).apply {
-            action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
-            putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIDs)
-            sendBroadcast(this)
-        }
-    }
-}
-
-fun Context.updateDateWidget() {
-    val widgetIDs = AppWidgetManager.getInstance(applicationContext).getAppWidgetIds(ComponentName(applicationContext, MyWidgetDateProvider::class.java))
-    if (widgetIDs.isNotEmpty()) {
-        Intent(applicationContext, MyWidgetDateProvider::class.java).apply {
-            action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
-            putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIDs)
-            sendBroadcast(this)
-        }
-    }
-}
-
 fun Context.scheduleAllEvents() {
     val events = eventsDB.getEventsAtReboot(getNowSeconds())
     events.forEach {
@@ -361,7 +325,7 @@ fun Context.recheckCalDAVCalendars(callback: () -> Unit) {
     if (config.caldavSync) {
         ensureBackgroundThread {
             calDAVHelper.refreshCalendars(false, callback)
-            updateWidgets()
+            ///updateWidgets()
         }
     }
 }
